@@ -1,6 +1,9 @@
 services:
   linkstack:
-    image: linkstackorg/linkstack:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: linkstack-rafael:latest
     restart: unless-stopped
     environment:
       HTTP_SERVER_NAME: link.rafaelmarcolino.online
