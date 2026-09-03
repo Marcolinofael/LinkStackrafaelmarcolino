@@ -2,7 +2,12 @@ services:
   linkstack:
     image: linkstackorg/linkstack:latest
     restart: unless-stopped
-    ports:
+    environment:
+      HTTP_SERVER_NAME: link.rafaelmarcolino.online
+      HTTPS_SERVER_NAME: link.rafaelmarcolino.online
+      SERVER_ADMIN: admin@rafaelmarcolino.online
+      TZ: America/Sao_Paulo
+    expose:
       - "80"
     volumes:
       - linkstack_data:/htdocs
