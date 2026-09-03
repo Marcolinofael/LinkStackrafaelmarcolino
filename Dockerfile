@@ -1,8 +1,8 @@
 FROM composer:2 AS php-dependencies
 
 WORKDIR /app
-COPY composer.json composer.lock ./
-RUN composer install --no-dev --no-interaction --no-progress --prefer-dist --optimize-autoloader
+COPY composer.json ./
+RUN composer update --no-dev --no-interaction --no-progress --prefer-dist --optimize-autoloader
 
 FROM node:20-alpine AS frontend
 
