@@ -1,0 +1,11 @@
+services:
+  linkstack:
+    image: linkstackorg/linkstack:latest
+    restart: unless-stopped
+    ports:
+      - "80"
+    volumes:
+      - linkstack_data:/htdocs
+
+volumes:
+  linkstack_data:
